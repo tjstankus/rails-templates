@@ -35,9 +35,6 @@ file "app/views/layouts/application.html.haml", <<-END
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#\{name\}"
       
-      - if show_title?
-        %h1=h yield(:title)
-      
       = yield
 END
 
