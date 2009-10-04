@@ -1,0 +1,2 @@
+- jQuery in application.html.haml if it's being used.
+- Default controller.

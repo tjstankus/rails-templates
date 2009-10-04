@@ -16,7 +16,6 @@ if yes?("Do you want to use jQuery?")
 end
 
 # Application layout with HAML
-# TODO: Get jQuery in there if it's being used.
 file "app/views/layouts/application.html.haml", <<-END
 !!!
 %html{html_attrs}
@@ -31,8 +30,7 @@ file "app/views/layouts/application.html.haml", <<-END
   %body
     #container
       = render 'shared/flash_messages'
-      
-      = yield
+      = yield :layout
 END
 
 file "app/views/shared/_flash_messages.html.haml", <<-END
@@ -47,8 +45,6 @@ gem('rspec-rails', :lib => false, :env => 'test')
 gem('thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :env => 'test')
 gem('cucumber', :env => 'test')
 gem('webrat', :env => 'test')
-
-# rake('gems:install', :sudo => true)
 
 # Generators
 generate :rspec
