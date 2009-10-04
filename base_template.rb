@@ -1,5 +1,3 @@
-# TODO: Create function in bash profile similar to Railscast 148
-
 # General file cleanup
 run "echo TODO > README"
 run "mv public/index.html public/index.orig.html"
@@ -32,21 +30,15 @@ file "app/views/layouts/application.html.haml", <<-END
   
   %body
     #container
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#\{name\}"
+      = render 'shared/flash_messages'
       
       = yield
 END
 
-# .gitignore
-file ".gitignore", <<-END
-.DS_Store
-log/*.log
-tmp/**/*
-config/database.yml
-db/*.sqlite3
+file "app/views/shared/_flash_messages.html.haml", <<-END
+- flash.each do |key, msg|
+  = content_tag :div, msg, :id => "flash_#\{key\}"  
 END
-run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 
 # Gems
 gem('haml')
@@ -61,6 +53,16 @@ gem('webrat', :env => 'test')
 # Generators
 generate :rspec
 generate :cucumber
+
+# .gitignore
+file ".gitignore", <<-END
+.DS_Store
+log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+END
+run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 
 # Git'r done
 git :init
