@@ -35,7 +35,7 @@ END
 
 file "app/views/shared/_flash_messages.html.haml", <<-END
 - flash.each do |key, msg|
-  = content_tag :div, msg, :id => "flash #\{key\}"  
+  = content_tag :div, msg, :class => "flash #\{key\}"  
 END
 
 file "public/stylesheets/sass/application.sass", <<-END
