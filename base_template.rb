@@ -56,7 +56,7 @@ END
 gem('haml')
 gem('rspec', :lib => false, :env => 'test')
 gem('rspec-rails', :lib => false, :env => 'test')
-gem('thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :env => 'test')
+gem('factory_girl', :env => 'test')
 gem('cucumber', :env => 'test')
 gem('webrat', :env => 'test')
 
