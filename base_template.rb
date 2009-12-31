@@ -5,7 +5,7 @@ run "rm -f public/javascripts/*"
 run "cp config/database.yml config/database_example.yml"
 
 # YUI reset.css
-run "curl -L http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css > public/stylesheets/reset-min.css"
+# run "curl -L http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css > public/stylesheets/reset-min.css"
 
 # jQuery
 if yes?("Do you want to use jQuery?")
