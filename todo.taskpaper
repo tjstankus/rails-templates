@@ -1,2 +1,1 @@
-- jQuery in application.html.haml if it's being used.
-- Default controller.
+- Application layout template use the styles, classnames setup by Compass.
