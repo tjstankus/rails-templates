@@ -87,11 +87,13 @@ gem('factory_girl', :env => 'test')
 gem('cucumber', :env => 'test')
 gem('cucumber-rails', :env => 'test')
 gem('webrat', :env => 'test')
+gem('pickle', :env => 'test')
 
 
 # Generators
 generate :rspec
 generate :cucumber
+generate :pickle, 'paths email'
 
 
 # .gitignore
