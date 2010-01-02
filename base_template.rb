@@ -85,6 +85,7 @@ gem('rspec', :lib => false, :env => 'test')
 gem('rspec-rails', :lib => false, :env => 'test')
 gem('factory_girl', :env => 'test')
 gem('cucumber', :env => 'test')
+gem('cucumber-rails', :env => 'test')
 gem('webrat', :env => 'test')
 
 
